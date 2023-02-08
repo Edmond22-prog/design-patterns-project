@@ -52,5 +52,16 @@ public class CommandeVehicule extends Commande {
 
     public void afficher() {
         System.out.println("Commande client " + nomClient + "\nNom du véhicule : " + nomVehicule + "\nQuantité : " + quantite);
+        afficherMontant();
+    }
+
+    @Override
+    protected void calculeMontant() {
+        montant = prixVehicule * quantite;
+    }
+
+    @Override
+    protected void calculeMontantTva() {
+        montantTva = (long) (montant * 19.25);
     }
 }

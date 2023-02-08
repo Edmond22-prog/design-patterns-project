@@ -12,10 +12,13 @@ public class Client {
         Commande commande2 = null;
         
         System.out.println("\n\nUtilisation de la fabrique de commande");
+        System.out.println("(New) Application du pattern Template Method");
         commande1 = fabriqueCommande.obtenirCommande("Ghislain Makolle", "Audi", 745000000, 1);
+        commande1.calculeMontantTtc();
         commande1.afficher();
         System.out.println("");
         commande2 = fabriqueCommande.obtenirCommande("Man Njoh", "Toyota", 4500000, 1);
+        commande2.calculeMontantTtc();
         commande2.afficher();
 
     }
