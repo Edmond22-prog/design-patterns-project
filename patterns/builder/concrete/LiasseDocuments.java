@@ -1,6 +1,8 @@
 package patterns.builder.concrete;
 
-public class LiasseDocument {
+import patterns.builder.abstract_.Document;
+
+public class LiasseDocuments {
     Document demandeImmatriculation;
     Document certificatCession;
     Document bonCommande;
@@ -11,15 +13,15 @@ public class LiasseDocument {
         bonCommande.affiche();
     }
 
-    public void ajouterDemandeImmatriculation(Document demandeImmatriculation) {
+    public void mettreDemandeImmatriculation(Document demandeImmatriculation) {
         this.demandeImmatriculation = demandeImmatriculation;
     }
 
-    public void ajouterCertificatCession(Document certificatCession) {
+    public void mettreCertificatCession(Document certificatCession) {
         this.certificatCession = certificatCession;
     }
 
-    public void ajouterBonCommande(Document bonCommande) {
+    public void mettreBonCommande(Document bonCommande) {
         this.bonCommande = bonCommande;
     }
 
