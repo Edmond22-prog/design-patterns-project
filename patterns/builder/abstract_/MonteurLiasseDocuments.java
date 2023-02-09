@@ -1,6 +1,6 @@
 package patterns.builder.abstract_;
 
-import patterns.builder.concrete.LiasseDocuments;
+import patterns.singleton.LiasseDocuments;
 
 public abstract class MonteurLiasseDocuments {
     protected LiasseDocuments liasseDocuments;

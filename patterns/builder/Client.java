@@ -2,9 +2,9 @@ package patterns.builder;
 
 import patterns.builder.abstract_.MonteurLiasseDocuments;
 import patterns.builder.concrete.Directeur;
-import patterns.builder.concrete.LiasseDocuments;
 import patterns.builder.concrete.MonteurLiasseDocumentsHtml;
 import patterns.builder.concrete.MonteurLiasseDocumentsPdf;
+import patterns.singleton.LiasseDocuments;
 
 public class Client {
 

@@ -1,11 +1,12 @@
 package patterns.builder.concrete;
 
 import patterns.builder.abstract_.MonteurLiasseDocuments;
+import patterns.singleton.LiasseDocuments;
 
 public class MonteurLiasseDocumentsHtml extends MonteurLiasseDocuments {
 
     public MonteurLiasseDocumentsHtml() {
-        liasseDocuments = new LiasseDocuments();
+        liasseDocuments = LiasseDocuments.getInstance();
     }
 
     @Override

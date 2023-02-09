@@ -1,11 +1,23 @@
-package patterns.builder.concrete;
+package patterns.singleton;
 
 import patterns.builder.abstract_.Document;
 
 public class LiasseDocuments {
-    public Document demandeImmatriculation;
-    public Document certificatCession;
-    public Document bonCommande;
+    // Implémentation du pattern singleton
+    private static LiasseDocuments instance;
+
+    private Document demandeImmatriculation;
+    private Document certificatCession;
+    private Document bonCommande;
+
+    private LiasseDocuments() {}
+
+    public static LiasseDocuments getInstance() {
+        if (instance == null) {
+            instance = new LiasseDocuments();
+        }
+        return instance;
+    }
 
     public void affiche() {
         demandeImmatriculation.affiche();
