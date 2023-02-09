@@ -3,22 +3,9 @@ package patterns.abstract_factory.concrete;
 import patterns.abstract_factory.abstract_.Automobile;
 
 public class AutomobileEssence extends Automobile {
-    public int id;
-    public String marque;
-    public String couleur;
-    public int puissance;
-    public int prix;
 
-    public AutomobileEssence() {
-    }
-
-    public AutomobileEssence(int puissance, String couleur, String marque, int prix, int id) {
-        this.id = id;
-        this.marque = marque;
-        this.couleur = couleur;
-        this.puissance = puissance;
-        this.prix = prix;
-
+    public AutomobileEssence(String marque, String couleur, int puissance, int prix) {
+        super(marque, couleur, puissance, prix);
     }
 
     public String getMarque() {

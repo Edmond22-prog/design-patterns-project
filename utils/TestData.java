@@ -1,7 +1,6 @@
 package utils;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
@@ -97,14 +96,11 @@ public class TestData {
                 if (type == "Essence") {
                     // creation de vehicule essence
                     voitureAncienne.listeVehicules.add(fabriqueVehiculeEssence.creerAutomobile(
-                            (int) (Math.random() * 1000),
                             marques.get((int) (Math.random() * marques.size())),
                             couleurs.get((int) (Math.random() * couleurs.size())),
                             (int) (Math.random() * 100),
                             (int) (Math.random() * 10000000)));
-                    System.out.println("voitureAncienne.listeVehicules.add(fabriqueVehiculeEssence.creerAutomobile(");
                     scooterAncien.listeVehicules.add(fabriqueVehiculeEssence.creerScooter(
-                            (int) (Math.random() * 1000),
                             marques.get((int) (Math.random() * marques.size())),
                             couleurs.get((int) (Math.random() * couleurs.size())),
                             (int) (Math.random() * 10),
@@ -112,7 +108,6 @@ public class TestData {
                 } else {
                     // creation de vehicule electrique
                     voitureModerne.listeVehicules.add(fabriqueVehiculeElectrique.creerAutomobile(
-                            (int) (Math.random() * 1000),
                             marques.get((int) (Math.random() * marques.size())),
                             couleurs.get((int) (Math.random() * couleurs.size())),
                             (int) (Math.random() * 100),
@@ -121,7 +116,6 @@ public class TestData {
                     ));
                     scooterModerne.listeVehicules.add(
                             fabriqueVehiculeEssence.creerScooter(
-                                    (int) (Math.random() * 1000),
                                     marques.get((int) (Math.random() * marques.size())),
                                     couleurs.get((int) (Math.random() * couleurs.size())),
                                     (int) (Math.random() * 10),
@@ -146,22 +140,22 @@ public class TestData {
 
     Vehicule searchById(int id) {
         for (Automobile automobile : voitureAncienne.listeVehicules) {
-            if (automobile.getId() == id) {
+            if (automobile.id == id) {
                 return automobile;
             }
         }
         for (Automobile automobile : voitureModerne.listeVehicules) {
-            if (automobile.getId() == id) {
+            if (automobile.id == id) {
                 return automobile;
             }
         }
         for (Scooter automobile : scooterAncien.listeVehicules) {
-            if (automobile.getId() == id) {
+            if (automobile.id == id) {
                 return automobile;
             }
         }
         for (Scooter automobile : scooterModerne.listeVehicules) {
-            if (automobile.getId() == id) {
+            if (automobile.id == id) {
                 return automobile;
             }
         }

@@ -7,6 +7,5 @@ public class App {
         TestData data = TestData.getData();
         data.buildCatalogues();
         Menu.showMenu(data);
-
     }
 }

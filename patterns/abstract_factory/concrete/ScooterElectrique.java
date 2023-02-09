@@ -3,21 +3,9 @@ package patterns.abstract_factory.concrete;
 import patterns.abstract_factory.abstract_.Scooter;
 
 public class ScooterElectrique extends Scooter {
-    public int id;
-    public String marque;
-    public String couleur;
-    public int puissance;
-    public int prix;
 
-    public ScooterElectrique() {
-    }
-
-    public ScooterElectrique(int puissance, String couleur, String marque, int prix, int id) {
-        this.id = id;
-        this.marque = marque;
-        this.couleur = couleur;
-        this.puissance = puissance;
-        this.prix = prix;
+    public ScooterElectrique(String marque, String couleur, int puissance, int prix) {
+        super(marque, couleur, puissance, prix);
     }
 
     public String getMarque() {

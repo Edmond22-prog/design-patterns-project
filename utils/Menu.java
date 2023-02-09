@@ -5,6 +5,10 @@ import java.util.Scanner;
 import patterns.abstract_factory.abstract_.Automobile;
 import patterns.abstract_factory.abstract_.Scooter;
 import patterns.abstract_factory.abstract_.Vehicule;
+import patterns.builder.abstract_.MonteurLiasseDocuments;
+import patterns.builder.concrete.Directeur;
+import patterns.builder.concrete.LiasseDocuments;
+import patterns.builder.concrete.MonteurLiasseDocumentsPdf;
 import patterns.decorator.abstract_.DecorateurVehicule;
 import patterns.decorator.concrete.DecorateurCatalogue;
 import patterns.factory_method.abstract_.Commande;
@@ -13,12 +17,6 @@ import patterns.factory_method.concrete.FabriqueCommandeVehicule;
 
 public class Menu {
 
-    // public static void main(String[] args) {
-    // TestData data = TestData.getData();
-    // data.buildCatalogues();
-    // showMenu();
-
-    // }
     public static void showMenu(TestData data) {
         Scanner sc = new Scanner(System.in);
         int choice;
@@ -86,10 +84,17 @@ public class Menu {
         System.out.print("\nQuantité a commander: ");
         int quantite = sc.nextInt();
 
-        FabriqueCommande fabriqueCommande = new FabriqueCommandeVehicule();
-        Commande commandeEnCour = fabriqueCommande.obtenirCommande(client, automobile.marque, automobile.prix,
-                quantite);
-        commandeEnCour.afficher();
+        FabriqueCommande commandeEnCours = new FabriqueCommandeVehicule();
+        Commande commande = commandeEnCours.obtenirCommande(client, vehicule.marque, vehicule.prix, quantite);
+        commande.calculeMontantTtc();
+        commande.afficher();
+        // fabriquer la liasse
+
+        MonteurLiasseDocuments monteurPdf = new MonteurLiasseDocumentsPdf();
+        Directeur directeur = new Directeur(monteurPdf);
+        LiasseDocuments liasse = directeur.construireDocument();
+        liasse.affiche();
+        
         sc.close();
     }
 

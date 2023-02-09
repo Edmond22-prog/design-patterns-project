@@ -15,17 +15,17 @@ public class Client {
         Scooter scooter = null;
 
         System.out.println("\n\nUtilisation de la fabrique essence");
-        automobile = fabriqueVehiculeEssence.creerAutomobile(1, "Renault", "Rouge", 56, 4567000);
+        automobile = fabriqueVehiculeEssence.creerAutomobile("Renault", "Rouge", 56, 4567000);
         automobile.seDecrire();
         System.out.println(""); // saut de ligne
-        scooter = fabriqueVehiculeEssence.creerScooter(2, "Vectrix", "Noir", 89, 860000);
+        scooter = fabriqueVehiculeEssence.creerScooter("Vectrix", "Noir", 89, 860000);
         scooter.seDecrire();
 
         System.out.println("\n\nUtilisation de la fabrique electrique");
-        automobile = fabriqueVehiculeElectrique.creerAutomobile(3, "Tesla", "Bleu", 90, 6200000);
+        automobile = fabriqueVehiculeElectrique.creerAutomobile("Tesla", "Bleu", 90, 6200000);
         automobile.seDecrire();
         System.out.println(""); // saut de ligne
-        scooter = fabriqueVehiculeElectrique.creerScooter(4, "Yamaha", "Blanc", 100, 1200000);
+        scooter = fabriqueVehiculeElectrique.creerScooter("Yamaha", "Blanc", 100, 1200000);
         scooter.seDecrire();
     }
 
