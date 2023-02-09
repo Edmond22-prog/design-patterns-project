@@ -9,9 +9,11 @@ public class ScooterElectrique extends Scooter {
     public int puissance;
     public int prix;
 
-    public ScooterElectrique() {}
+    public ScooterElectrique() {
+    }
 
-    public ScooterElectrique(String marque, String couleur, int puissance, int prix) {
+    public ScooterElectrique(int puissance, String couleur, String marque, int prix, int id) {
+        this.id = id;
         this.marque = marque;
         this.couleur = couleur;
         this.puissance = puissance;
@@ -51,7 +53,8 @@ public class ScooterElectrique extends Scooter {
     }
 
     public void seDecrire() {
-        System.out.println("Scooter " + marque + "\nType Electrique\nCouleur " + couleur + "\nPuissance " + puissance + " Watts\nPrix : " + prix + " Fcfa");
+        System.out.println("Scooter : " + marque + "\nNumero : " + id + "\nType : Electrique\nCouleur : " + couleur
+                + "\nPuissance : " + puissance + " Watts\nPrix : " + prix + " Fcfa");
     }
-    
+
 }

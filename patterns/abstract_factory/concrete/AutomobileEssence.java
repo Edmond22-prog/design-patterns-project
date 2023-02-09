@@ -9,13 +9,16 @@ public class AutomobileEssence extends Automobile {
     public int puissance;
     public int prix;
 
-    public AutomobileEssence() {}
+    public AutomobileEssence() {
+    }
 
-    public AutomobileEssence(String marque, String couleur, int puissance, int prix) {
+    public AutomobileEssence(int puissance, String couleur, String marque, int prix, int id) {
+        this.id = id;
         this.marque = marque;
         this.couleur = couleur;
         this.puissance = puissance;
         this.prix = prix;
+
     }
 
     public String getMarque() {
@@ -51,6 +54,8 @@ public class AutomobileEssence extends Automobile {
     }
 
     public void seDecrire() {
-        System.out.println("Automobile " + marque + "\nType Essence\nCouleur " + couleur + "\nPuissance " + puissance +" Chevaux\nPrix : " + prix + " Fcfa");
+        System.out.println("Automobile : " + marque + "\nNumero : " + getId() + "\nType : Essence\nCouleur : " + couleur
+                + "\nPuissance : "
+                + puissance + " Chevaux\nPrix : " + prix + " Fcfa");
     }
 }

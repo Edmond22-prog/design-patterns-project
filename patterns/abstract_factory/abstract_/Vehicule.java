@@ -2,7 +2,7 @@ package patterns.abstract_factory.abstract_;
 
 import java.util.Random;
 
-public abstract class Automobile extends Vehicule {
+public abstract class Vehicule {
     public int id;
     public String marque;
     public String couleur;
@@ -12,10 +12,9 @@ public abstract class Automobile extends Vehicule {
     public void seDecrire() {
     }
 
-    public int buildId() {
+    public void setId() {
         Random rand = new Random();
-        return rand.nextInt(10000);
-
+        this.id = rand.nextInt(10000);
     }
 
     public int getId() {

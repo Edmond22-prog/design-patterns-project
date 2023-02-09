@@ -9,7 +9,8 @@ public class CommandeVehicule extends Commande {
     public int prixVehicule;
     public int quantite;
 
-    public CommandeVehicule() {}
+    public CommandeVehicule() {
+    }
 
     public CommandeVehicule(String nomC, String nomV, int prixV, int q) {
         this.nomClient = nomC;
@@ -33,7 +34,7 @@ public class CommandeVehicule extends Commande {
     public void setNomVehicule(String nomV) {
         nomVehicule = nomV;
     }
-    
+
     public int getPrixVehicule() {
         return prixVehicule;
     }
@@ -51,7 +52,8 @@ public class CommandeVehicule extends Commande {
     }
 
     public void afficher() {
-        System.out.println("Commande client " + nomClient + "\nNom du véhicule : " + nomVehicule + "\nQuantité : " + quantite);
+        System.out.println(
+                "\nCommande client " + nomClient + "\nNom du véhicule : " + nomVehicule + "\nQuantité : " + quantite);
         afficherMontant();
     }
 
