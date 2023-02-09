@@ -1,8 +1,9 @@
-package patterns.composite.concrete;
+package composite.concrete;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import patterns.composite.abstract_.Societe;;
+import abstract_.Societe;;
 
 public class Compose extends Societe{
     private String name;

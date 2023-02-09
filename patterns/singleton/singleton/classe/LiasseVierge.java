@@ -3,6 +3,10 @@ import java.util.ArrayList;
 
 import javax.swing.text.Document;
 
+//import org.w3c.dom.stylesheets.DocumentStyle;
+
+import singleton.classe.Liasses;
+
 public class LiasseVierge extends Liasses{
     private static LiasseVierge instance= null;
 
