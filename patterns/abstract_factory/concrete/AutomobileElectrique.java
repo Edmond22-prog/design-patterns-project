@@ -9,13 +9,16 @@ public class AutomobileElectrique extends Automobile {
     public int puissance;
     public int prix;
 
-    public AutomobileElectrique() {}
+    public AutomobileElectrique() {
+    }
 
-    public AutomobileElectrique(String marque, String couleur, int puissance, int prix) {
+    public AutomobileElectrique(String marque, String couleur, int puissance, int prix, int id) {
+        this.id = id;
         this.marque = marque;
         this.couleur = couleur;
         this.puissance = puissance;
         this.prix = prix;
+        
     }
 
     public String getMarque() {
@@ -51,7 +54,9 @@ public class AutomobileElectrique extends Automobile {
     }
 
     public void seDecrire() {
-        System.out.println("Automobile " + marque + "\nType Electrique\nCouleur " + couleur + "\nPuissance " + puissance + " Watts\nPrix : " + prix + " Fcfa");
+        System.out.println("Automobile : " + marque + "\nNumero : " + id + "\nType : Electrique\nCouleur : " + couleur
+                + "\nPuissance : "
+                + puissance + " Watts\nPrix : " + prix + " Fcfa");
     }
-    
+
 }

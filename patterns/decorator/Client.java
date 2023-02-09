@@ -8,19 +8,19 @@ import patterns.decorator.concrete.CatalogueScooter;
 import patterns.decorator.concrete.DecorateurCatalogue;
 
 public class Client {
-    
+
     public static void main(String [] args) {
         FabriqueVehiculeEssence fabriqueV = new FabriqueVehiculeEssence();
         FabriqueVehiculeElectrique fabriqueVE = new FabriqueVehiculeElectrique();
 
         CatalogueAutomobile catalogueA = new CatalogueAutomobile("Automobile Classe MOVIE");
-        catalogueA.ajouterVehicule(fabriqueV.creerAutomobile("Lamborguini", "Jaune", 210, 1357000000));
-        catalogueA.ajouterVehicule(fabriqueV.creerAutomobile("Ferrari", "Rouge", 110, 950500000));
-        catalogueA.ajouterVehicule(fabriqueVE.creerAutomobile("Porsche", "Noir", 150, 1200000000));
+        catalogueA.ajouterVehicule(fabriqueV.creerAutomobile(1, "Lamborguini", "Jaune", 210, 1357000000,));
+        catalogueA.ajouterVehicule(fabriqueV.creerAutomobile(2,"Ferrari", "Rouge", 110, 950500000));
+        catalogueA.ajouterVehicule(fabriqueVE.creerAutomobile(3,"Porsche", "Noir", 150, 1200000000));
 
         CatalogueScooter catalogueS = new CatalogueScooter("Scooter Classe HOMECOMING");
-        catalogueS.ajouterVehicule(fabriqueV.creerScooter("Yamaha", "Bleu", 50, 750000));
-        catalogueS.ajouterVehicule(fabriqueVE.creerScooter("Lexus", "Blanc", 30, 500000));
+        catalogueS.ajouterVehicule(fabriqueV.creerScooter(4,"Yamaha", "Bleu", 50, 750000));
+        catalogueS.ajouterVehicule(fabriqueVE.creerScooter(5,"Lexus", "Blanc", 30, 500000));
 
         System.out.println("\n(Message) Affichage avant décoration\n");
         catalogueA.afficherVehicules();

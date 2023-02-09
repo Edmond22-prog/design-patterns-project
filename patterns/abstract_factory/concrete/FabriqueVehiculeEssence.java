@@ -12,8 +12,8 @@ public class FabriqueVehiculeEssence implements IFabriqueVehicule {
     }
 
     @Override
-    public Automobile creerAutomobile(String marque, String couleur, int puissance, int prix) {
-        return new AutomobileEssence(marque, couleur, puissance, prix);
+    public Automobile creerAutomobile(int id, String marque, String couleur, int puissance, int prix) {
+        return new AutomobileEssence(id, marque, couleur, puissance, prix);
     }
 
     @Override
@@ -22,8 +22,8 @@ public class FabriqueVehiculeEssence implements IFabriqueVehicule {
     }
 
     @Override
-    public Scooter creerScooter(String marque, String couleur, int puissance, int prix) {
-        return new ScooterEssence(marque, couleur, puissance, prix);
+    public Scooter creerScooter(int id, String marque, String couleur, int puissance, int prix) {
+        return new ScooterEssence(id, marque, couleur, puissance, prix);
     }
-    
+
 }

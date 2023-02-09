@@ -9,13 +9,17 @@ public class ScooterEssence extends Scooter {
     public int puissance;
     public int prix;
 
-    public ScooterEssence() {}
+    public ScooterEssence() {
+    }
 
-    public ScooterEssence(String marque, String couleur, int puissance, int prix) {
+    public ScooterEssence(int puissance, String couleur, String marque, int prix, int id) {
+        this.id = id;
         this.marque = marque;
         this.couleur = couleur;
         this.puissance = puissance;
         this.prix = prix;
+        this.id = buildId();
+        ;
     }
 
     public String getMarque() {
@@ -51,7 +55,8 @@ public class ScooterEssence extends Scooter {
     }
 
     public void seDecrire() {
-        System.out.println("Scooter " + marque + "\nType Essence\nCouleur " + couleur + "\nPuissance " + puissance + " Chevaux\nPrix : " + prix + " Fcfa");
+        System.out.println("Scooter : " + marque + "\nNumero : " + getId() + "\nType : Essence\nCouleur : " + couleur
+                + "\nPuissance : " + puissance + " Chevaux\nPrix : " + prix + " Fcfa");
     }
-    
+
 }
