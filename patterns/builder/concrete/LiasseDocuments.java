@@ -3,9 +3,9 @@ package patterns.builder.concrete;
 import patterns.builder.abstract_.Document;
 
 public class LiasseDocuments {
-    Document demandeImmatriculation;
-    Document certificatCession;
-    Document bonCommande;
+    public Document demandeImmatriculation;
+    public Document certificatCession;
+    public Document bonCommande;
 
     public void affiche() {
         demandeImmatriculation.affiche();

@@ -8,6 +8,7 @@ import patterns.abstract_factory.abstract_.Vehicule;
 import patterns.builder.abstract_.MonteurLiasseDocuments;
 import patterns.builder.concrete.Directeur;
 import patterns.builder.concrete.LiasseDocuments;
+import patterns.builder.concrete.MonteurLiasseDocumentsHtml;
 import patterns.builder.concrete.MonteurLiasseDocumentsPdf;
 import patterns.decorator.abstract_.DecorateurVehicule;
 import patterns.decorator.concrete.DecorateurCatalogue;
@@ -90,12 +91,35 @@ public class Menu {
         commande.afficher();
         // fabriquer la liasse
 
-        MonteurLiasseDocuments monteurPdf = new MonteurLiasseDocumentsPdf();
-        Directeur directeur = new Directeur(monteurPdf);
-        LiasseDocuments liasse = directeur.construireDocument();
-        liasse.affiche();
+        int choice2;
+        do {
+            System.out.println("\nFormat:");
+            System.out.println("1. PDF");
+            System.out.println("2. HTML");
+            System.out.print("\nSpecifier le format du document: ");
+            choice2 = sc.nextInt();
+            switch (choice2) {
+                case 1:
+                    System.out.println("\nLiasse documents PDF\n");
+                    MonteurLiasseDocuments monteurPdf = new MonteurLiasseDocumentsPdf();
+                    Directeur directeur = new Directeur(monteurPdf);
+                    LiasseDocuments liasse = directeur.construireDocument();
+                    liasse.affiche();
+                    break;
+                case 2:
+                    System.out.println("\nLiasse documents HTML\n");
+                    MonteurLiasseDocuments monteurHtml = new MonteurLiasseDocumentsHtml();
+                    Directeur directeur2 = new Directeur(monteurHtml);
+                    LiasseDocuments liasse2 = directeur2.construireDocument();
+                    liasse2.affiche();
+                    break;
+                default:
+                    System.out.println("\nChoix non valide, veuillez réessayer.");
+                    break;
+            }
+        } while (choice2 != 1 && choice2 != 2);
         
-        sc.close();
+        // sc.close();
     }
 
     public static void afficherCatalogue(TestData data) {
