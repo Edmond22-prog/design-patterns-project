@@ -24,21 +24,17 @@ public class Menu {
         int choice;
         do {
             System.out.println("\nMenu:");
-            System.out.println("1. Rechercher un véhicule");
-            System.out.println("2. Consulter le catalogue");
-            System.out.println("3. Passer une commande");
+            System.out.println("1. Consulter le catalogue");
+            System.out.println("2. Passer une commande");
             System.out.println("0. Quitter");
             System.out.print("\nVotre choix: ");
             choice = sc.nextInt();
             switch (choice) {
                 case 1:
-                    System.out.println("\nRecherche de véhicule en cours...");
-                    break;
-                case 2:
                     System.out.println("\n********** Notre catalogue de vehicule **********\n");
                     afficherCatalogue(data);
                     break;
-                case 3:
+                case 2:
                     System.out.println("\n********** Passer une commande **********\n");
                     passerCommande(data);
                     break;
@@ -78,12 +74,13 @@ public class Menu {
         String client = sc.nextLine();
 
         System.out.print("\nAvez-vous des filiales? (O/N): ");
-        String reponse = sc.nextLine();
-        if (reponse == "O" || reponse == "o") {
+        char reponse = sc.nextLine().charAt(0);
+        if (reponse == 'O' || reponse == 'o') {
 
             Compose societeF = new Compose(client);
             System.out.print("\nCombien de filiales avez-vous?: ");
             int nbFiliales = sc.nextInt();
+            sc.nextLine();
             for (int i = 0; i < nbFiliales; i++) {
                 System.out.print("\nNom de la filiale: ");
                 String nomFiliales = sc.nextLine();
